@@ -7,25 +7,26 @@ const OptionsSelector = () => {
   const [answerState, setAnswerState] = useState('');
   console.log(userAnswers);
 
-  const activeQuestionIndex = userAnswers.length;
+  const activeQuestionIndex =
+    answerState === '' ? userAnswers.length : userAnswers.length - 1;
 
   const onhandleOptionsClick = (answer) => {
-    setTimeout(() => {
-      setAnswerState('selected');
-    }, 1000);
-
+    setAnswerState('correct');
     setUserAnswers((prev) => [...prev, answer]);
+
+    setTimeout(() => {
+      setAnswerState('');
+    }, 2000);
   };
 
   if (activeQuestionIndex === QUESTIONS.length) {
     return (
       <div>
-        <Summary />
+        <Summary userAnswers={userAnswers} />
       </div>
     );
   }
 
-  // when an answer is clicked, it should show color yellow for a second and move to the next question
   return (
     <div className="container">
       <div className="quiz">
