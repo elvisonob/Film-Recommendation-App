@@ -1,7 +1,12 @@
+import Home from './components/Home';
+import Header from './components/Header';
+import OptionsSelector from './components/OptionsSelector';
+
 const App = () => {
   return (
     <div>
-      <h1>One Love1</h1>
+      <Header />
+      <OptionsSelector />
     </div>
   );
 };
