@@ -82,3 +82,27 @@ h1 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+.film-container {
+  display: grid;
+  grid-template-columns: repeat(2, 25%);
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.films {
+  display: grid;
+  border: 2px solid black;
+  grid-template-rows: 50px 1fr 50px;
+}
+
+.film-title {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.film-background {
+  background-color: bisque;
+}

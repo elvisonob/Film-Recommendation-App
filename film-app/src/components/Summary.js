@@ -27,6 +27,7 @@ const Summary = ({ userAnswers }) => {
         api_key: API_key,
         with_genres: genreId,
         certification_country: country,
+        //primary_release_year,
         certification: rating,
         region: country,
         sort_by: 'popularity.desc',
@@ -43,11 +44,32 @@ const Summary = ({ userAnswers }) => {
         console.log('Error fetching Films', err);
       }
     };
+    if (userAnswers.length === 4) {
+      sendRequest();
+    }
   }, [userAnswers]);
 
   return (
-    <div>
+    <div className="film-background">
       <h1>Top Movie Recommendation</h1>
+      <div className="film-container">
+        {filmRecommendation.map((film) => {
+          return (
+            <div key={film.id} className="films">
+              <div className="film-title">{film.title}</div>
+              {film.poster_path && (
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
+                  alt={film.title}
+                  height="100%"
+                  width="100%"
+                />
+              )}
+              <p>Release-year:{film.primary_release_year}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
