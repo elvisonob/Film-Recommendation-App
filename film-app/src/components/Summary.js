@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 const Summary = ({ userAnswers }) => {
   const [filmRecommendation, setFilmRecommendation] = useState([]);
 
+  const randomizedFilm = filmRecommendation.sort(() => Math.random() - 0.5);
+  const finalFilmDisplay = randomizedFilm.slice(0, 10);
+
   useEffect(() => {
     const sendRequest = async () => {
       const genre = userAnswers[0];
@@ -39,7 +42,8 @@ const Summary = ({ userAnswers }) => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setFilmRecommendation(data.results.slice(0, 10));
+        //bring out the first 100, and then i will randomly display 10
+        setFilmRecommendation(data.results.slice(0, 100));
       } catch (err) {
         console.log('Error fetching Films', err);
       }
@@ -53,7 +57,7 @@ const Summary = ({ userAnswers }) => {
     <div className="film-background">
       <h1>Top Movie Recommendation</h1>
       <div className="film-container">
-        {filmRecommendation.map((film) => {
+        {finalFilmDisplay.map((film) => {
           return (
             <div key={film.id} className="films">
               <div className="film-title">{film.title}</div>
