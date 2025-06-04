@@ -4,9 +4,15 @@ import { useState, useEffect } from 'react';
 
 const Summary = ({ userAnswers }) => {
   const [filmRecommendation, setFilmRecommendation] = useState([]);
+  const [shuffledFilm, setShuffledFilm] = useState([]);
 
-  const randomizedFilm = filmRecommendation.sort(() => Math.random() - 0.5);
-  const finalFilmDisplay = randomizedFilm.slice(0, 10);
+  useEffect(() => {
+    const finalFilmDisplay = [...filmRecommendation]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
+
+    setShuffledFilm(finalFilmDisplay);
+  }, [filmRecommendation]);
 
   useEffect(() => {
     const sendRequest = async () => {
@@ -37,13 +43,16 @@ const Summary = ({ userAnswers }) => {
         page: '1',
       }).toString();
 
-      const url = `https://api.themoviedb.org/3/discover/movie?${query}`;
-
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        //bring out the first 100, and then i will randomly display 10
-        setFilmRecommendation(data.results.slice(0, 100));
+        let allResults = [];
+        for (let i = 1; i <= 5; i++) {
+          const url = `https://api.themoviedb.org/3/discover/movie?${query}&page=${i}`;
+          const response = await fetch(url);
+          const data = await response.json();
+          //bring out the first 100, and then i will randomly display 10
+          allResults = allResults.concat(data.results || []);
+        }
+        setFilmRecommendation(allResults.slice(0, 100));
       } catch (err) {
         console.log('Error fetching Films', err);
       }
@@ -57,7 +66,7 @@ const Summary = ({ userAnswers }) => {
     <div className="film-background">
       <h1>Top Movie Recommendation</h1>
       <div className="film-container">
-        {finalFilmDisplay.map((film) => {
+        {shuffledFilm.map((film) => {
           return (
             <div key={film.id} className="films">
               <div className="film-title">{film.title}</div>
