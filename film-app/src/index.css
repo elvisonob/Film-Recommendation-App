@@ -32,7 +32,7 @@ body {
   color: white;
 }
 
-ul li {
+ul button {
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
@@ -40,28 +40,23 @@ ul li {
   color: white;
 }
 
-li {
+button {
   margin-bottom: 10px;
   background-color: blue;
   list-style: none;
 }
 
-li.correct {
+button.correct {
   background-color: green;
 }
 
-li.wrong {
+button.wrong {
   background-color: red;
 }
 
-li.selected {
+button.selected {
   background-color: yellow;
 }
-
-/* li:hover {
-  background-color: aqua;
-  cursor: pointer;
-} */
 
 .header {
   text-align: center;
@@ -105,4 +100,20 @@ h1 {
 
 .film-background {
   background-color: bisque;
+}
+
+.back {
+  background-color: red;
+  padding: 10px;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+p {
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+  padding-top: 10px;
 }

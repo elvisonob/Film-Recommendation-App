@@ -5,7 +5,6 @@ import { useState } from 'react';
 const OptionsSelector = () => {
   const [userAnswers, setUserAnswers] = useState([]);
   const [answerState, setAnswerState] = useState('');
-  const [firstIndex, setFirstIndex] = useState(false);
   console.log(userAnswers);
 
   const activeQuestionIndex =
@@ -17,7 +16,6 @@ const OptionsSelector = () => {
 
     setTimeout(() => {
       setAnswerState('');
-      setFirstIndex(true);
     }, 2000);
   };
 
@@ -28,11 +26,10 @@ const OptionsSelector = () => {
       </div>
     );
   }
-  // if in the first index, do not show the back button, but do show it on other indexes
 
-  // when the back button is clicked, the current option selected is removed
-
-  const onClickBack = () => {};
+  const onClickBack = () => {
+    setUserAnswers((prev) => prev.slice(0, -1));
+  };
 
   return (
     <div className="container">
@@ -47,18 +44,22 @@ const OptionsSelector = () => {
               cssClass = answerState;
             }
             return (
-              <div>
-                <li
-                  key={options}
+              <div key={options}>
+                <button
                   className={cssClass}
+                  disabled={answerState !== ''}
                   onClick={() => onhandleOptionsClick(options)}
                 >
                   {options}
-                </li>
+                </button>
               </div>
             );
           })}
-          {firstIndex && <button>Back</button>}
+          {userAnswers.length > 0 && (
+            <button className="back" onClick={onClickBack}>
+              Back
+            </button>
+          )}
         </ul>
       </div>
     </div>

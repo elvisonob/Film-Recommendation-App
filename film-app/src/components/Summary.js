@@ -36,7 +36,6 @@ const Summary = ({ userAnswers }) => {
         api_key: API_key,
         with_genres: genreId,
         certification_country: country,
-        //primary_release_year,
         certification: rating,
         region: country,
         sort_by: 'popularity.desc',
@@ -45,6 +44,7 @@ const Summary = ({ userAnswers }) => {
 
       try {
         let allResults = [];
+
         for (let i = 1; i <= 5; i++) {
           const url = `https://api.themoviedb.org/3/discover/movie?${query}&page=${i}`;
           const response = await fetch(url);
@@ -67,6 +67,8 @@ const Summary = ({ userAnswers }) => {
       <h1>Top Movie Recommendation</h1>
       <div className="film-container">
         {shuffledFilm.map((film) => {
+          const releaseDate = film.release_date;
+          const splitReleaseDate = releaseDate.split('-');
           return (
             <div key={film.id} className="films">
               <div className="film-title">{film.title}</div>
@@ -78,7 +80,7 @@ const Summary = ({ userAnswers }) => {
                   width="100%"
                 />
               )}
-              <p>Release-year:{film.primary_release_year}</p>
+              <p>Release-year: {splitReleaseDate[0]}</p>
             </div>
           );
         })}
