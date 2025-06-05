@@ -62,6 +62,10 @@ const Summary = ({ userAnswers }) => {
     }
   }, [userAnswers]);
 
+  if (!shuffledFilm) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div className="film-background">
       <h1>Top Movie Recommendation</h1>

@@ -1,6 +1,7 @@
 import QUESTIONS from '../questions.js';
 import Summary from './Summary';
 import { useState } from 'react';
+import Header from './Header';
 
 const OptionsSelector = () => {
   const [userAnswers, setUserAnswers] = useState([]);
@@ -34,6 +35,7 @@ const OptionsSelector = () => {
   return (
     <div className="container">
       <div className="quiz">
+        <Header />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul>
           {QUESTIONS[activeQuestionIndex].answers.map((options) => {
