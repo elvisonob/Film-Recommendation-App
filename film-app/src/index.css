@@ -46,7 +46,7 @@ ul button {
 
 button {
   margin-bottom: 10px;
-  background-color: blue;
+  background-color: black;
   list-style: none;
 }
 
@@ -116,9 +116,9 @@ h1 {
   width: 20%;
 }
 
-button:disabled {
+/* button:disabled {
   opacity: 0.5;
-}
+} */
 
 p {
   text-align: center;
