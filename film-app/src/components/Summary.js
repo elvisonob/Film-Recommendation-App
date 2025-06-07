@@ -1,5 +1,3 @@
-// Now, i take all the userInput and send it to an API,
-// to use to bring the first 10 films
 import { useState, useEffect } from 'react';
 import QUESTIONS from '../questions.js';
 
@@ -7,8 +5,7 @@ const Summary = ({ userAnswers }) => {
   const [filmRecommendation, setFilmRecommendation] = useState([]);
   const [shuffledFilm, setShuffledFilm] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  //when the movies are loading show 'loading...'
+  const [mediaType, setMediaType] = useState('movie');
 
   useEffect(() => {
     const finalFilmDisplay = [...filmRecommendation]
@@ -20,24 +17,22 @@ const Summary = ({ userAnswers }) => {
 
   useEffect(() => {
     const sendRequest = async () => {
+      setIsLoading(true);
       const genre = userAnswers[0];
       const rating = userAnswers[1];
       const country = userAnswers[3];
 
       const API_key = '0514ea5bc02a1f50a634dad7f81a8877';
 
-      // feature film = discover/movie
-      // TV show = discover/tv
-      // documentary = discover/movie?with_genres=99
-
-      let movie = 'movie';
       let isDocumentary = false;
 
       if (userAnswers[2] === QUESTIONS[2].answers[2]) {
-        movie = 'tv';
-      } else if (userAnswers[2] === QUESTIONS[2].answers[1]) {
-        isDocumentary = true;
+        setMediaType('tv');
+      } else {
+        setMediaType('movie');
       }
+
+      // if documentary is true, it should be first_air_date
 
       const genreMap = {
         Romance: 10749,
@@ -62,7 +57,7 @@ const Summary = ({ userAnswers }) => {
         let allResults = [];
 
         for (let i = 1; i <= 5; i++) {
-          const url = `https://api.themoviedb.org/3/discover/${movie}?${query}&page=${i}`;
+          const url = `https://api.themoviedb.org/3/discover/${mediaType}?${query}&page=${i}`;
           console.log(url);
           const response = await fetch(url);
           const data = await response.json();
@@ -78,6 +73,7 @@ const Summary = ({ userAnswers }) => {
     if (userAnswers.length === 4) {
       sendRequest();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userAnswers]);
 
   if (isLoading) {
@@ -90,7 +86,8 @@ const Summary = ({ userAnswers }) => {
       {!isLoading && (
         <div className="film-container">
           {shuffledFilm.map((film) => {
-            const releaseDate = film.release_date;
+            const releaseDate =
+              mediaType === 'tv' ? film.first_air_date : film.release_date;
             const splitReleaseDate = releaseDate.split('-');
             return (
               <div key={film.id} className="films">
