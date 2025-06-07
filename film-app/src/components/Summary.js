@@ -26,13 +26,13 @@ const Summary = ({ userAnswers }) => {
 
       let isDocumentary = false;
 
-      if (userAnswers[2] === QUESTIONS[2].answers[2]) {
+      if (userAnswers[2] === QUESTIONS[2].answers[1]) {
+        isDocumentary = true;
+      } else if (userAnswers[2] === QUESTIONS[2].answers[2]) {
         setMediaType('tv');
       } else {
         setMediaType('movie');
       }
-
-      // if documentary is true, it should be first_air_date
 
       const genreMap = {
         Romance: 10749,
@@ -61,7 +61,7 @@ const Summary = ({ userAnswers }) => {
           console.log(url);
           const response = await fetch(url);
           const data = await response.json();
-          //bring out the first 100, and then i will randomly display 10
+
           allResults = allResults.concat(data.results || []);
         }
         setIsLoading(false);
@@ -82,12 +82,13 @@ const Summary = ({ userAnswers }) => {
 
   return (
     <div className="film-background">
-      <h1>Top Movie Recommendation</h1>
+      <h1>Top Recommendation</h1>
       {!isLoading && (
         <div className="film-container">
           {shuffledFilm.map((film) => {
             const releaseDate =
               mediaType === 'tv' ? film.first_air_date : film.release_date;
+
             const splitReleaseDate = releaseDate.split('-');
             return (
               <div key={film.id} className="films">
