@@ -17,7 +17,7 @@ const OptionsSelector = () => {
 
     setTimeout(() => {
       setAnswerState('');
-    }, 2000);
+    }, 1000);
   };
 
   if (activeQuestionIndex === QUESTIONS.length) {

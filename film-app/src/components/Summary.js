@@ -20,18 +20,19 @@ const Summary = ({ userAnswers }) => {
       setIsLoading(true);
       const genre = userAnswers[0];
       const rating = userAnswers[1];
+      const category = userAnswers[2];
       const country = userAnswers[3];
 
       const API_key = '0514ea5bc02a1f50a634dad7f81a8877';
 
       let isDocumentary = false;
 
-      if (userAnswers[2] === QUESTIONS[2].answers[1]) {
+      if (category === QUESTIONS[2].answers[1]) {
         isDocumentary = true;
-      } else if (userAnswers[2] === QUESTIONS[2].answers[2]) {
+      }
+
+      if (userAnswers[2] === QUESTIONS[2].answers[2]) {
         setMediaType('tv');
-      } else {
-        setMediaType('movie');
       }
 
       const genreMap = {
