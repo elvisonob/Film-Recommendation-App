@@ -84,6 +84,11 @@ const Summary = ({ userAnswers }) => {
     return <h1>Loading...</h1>;
   }
 
+  const onStartAfreshButton = () => {
+    // empty the array
+    return userAnswers.length === 0;
+  };
+
   return (
     <div className="film-background">
       <h1>Top Recommendation</h1>
@@ -109,6 +114,9 @@ const Summary = ({ userAnswers }) => {
               </div>
             );
           })}
+          <button className="refresh" onClick={onStartAfreshButton}>
+            Start Afresh
+          </button>
         </div>
       )}
     </div>

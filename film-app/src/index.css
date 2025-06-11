@@ -1,128 +1,137 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: bisque;
+    background-color: bisque;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .quiz {
-  text-align: center;
-  /* border: 2px solid black; */
-  display: inline-block;
-  /* padding: 500px; */
-  color: grey;
-  margin: auto;
-  padding-top: 50px;
-  /* background-color: rgb(50, 50, 50); */
-  padding-bottom: 50px;
+    text-align: center;
+    /* border: 2px solid black; */
+    display: inline-block;
+    /* padding: 500px; */
+    color: grey;
+    margin: auto;
+    padding-top: 50px;
+    /* background-color: rgb(50, 50, 50); */
+    padding-bottom: 50px;
 }
 
 .quiz h2 {
-  margin-bottom: 25px;
-  margin-top: 20px;
-  color: orangered;
-  font-weight: bolder;
-  font-size: xx-large;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    color: orangered;
+    font-weight: bolder;
+    font-size: xx-large;
 }
 
 ul button {
-  /* border: 1px solid black; */
-  width: 100%;
-  border-radius: 10px;
-  padding: 20px 100px;
-  font-weight: 900;
-  color: white;
-  font-size: larger;
+    /* border: 1px solid black; */
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 100px;
+    font-weight: 900;
+    color: white;
+    font-size: larger;
 }
 
 button {
-  margin-bottom: 10px;
-  background-color: black;
-  list-style: none;
+    margin-bottom: 10px;
+    background-color: black;
+    list-style: none;
 }
 
 button.correct {
-  background-color: green;
+    background-color: green;
 }
 
 button.wrong {
-  background-color: red;
+    background-color: red;
 }
 
 button.selected {
-  background-color: yellow;
+    background-color: yellow;
 }
 
 .header {
-  text-align: center;
-  margin-top: 80px;
-  margin-bottom: 30px;
-  color: white;
-  font-size: larger;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    color: white;
+    font-size: larger;
 }
 
 .summary h1 {
-  color: ghostwhite;
-  font-weight: bolder;
-  text-align: center;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-align: center;
 }
 
 h1 {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .film-container {
-  display: grid;
-  grid-template-columns: repeat(2, 25%);
-  grid-gap: 10px;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    grid-gap: 10px;
+    justify-content: center;
 }
 
 .films {
-  display: grid;
-  border: 3px solid black;
-  grid-template-rows: 50px 1fr 50px;
+    display: grid;
+    border: 3px solid black;
+    grid-template-rows: 50px 1fr 50px;
 }
 
 .header {
-  color: black;
+    color: black;
 }
 
 .film-title {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 10px;
-  font-size: larger;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: larger;
 }
 
 .film-background {
-  background-color: bisque;
+    background-color: bisque;
 }
 
 .back {
-  background-color: red;
-  padding: 10px;
-  width: 20%;
+    background-color: red;
+    padding: 10px;
+    width: 20%;
 }
+
 
 /* button:disabled {
   opacity: 0.5;
 } */
 
 p {
-  text-align: center;
-  font-size: larger;
-  font-weight: bolder;
-  padding-top: 10px;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+
+.refresh {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    font-size: larger;
+    border-radius: 5px;
 }
