@@ -27,13 +27,16 @@ const Summary = ({ userAnswers }) => {
 
       let isDocumentary = false;
 
+      let movieType = 'movie';
       if (category === QUESTIONS[2].answers[1]) {
         isDocumentary = true;
       }
 
-      if (userAnswers[2] === QUESTIONS[2].answers[2]) {
-        setMediaType('tv');
+      if (category === QUESTIONS[2].answers[2]) {
+        movieType = 'tv';
       }
+
+      setMediaType(movieType);
 
       const genreMap = {
         Romance: 10749,
@@ -58,7 +61,7 @@ const Summary = ({ userAnswers }) => {
         let allResults = [];
 
         for (let i = 1; i <= 5; i++) {
-          const url = `https://api.themoviedb.org/3/discover/${mediaType}?${query}&page=${i}`;
+          const url = `https://api.themoviedb.org/3/discover/${movieType}?${query}&page=${i}`;
           console.log(url);
           const response = await fetch(url);
           const data = await response.json();
