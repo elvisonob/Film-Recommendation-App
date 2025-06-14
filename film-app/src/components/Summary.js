@@ -6,6 +6,7 @@ const Summary = ({ userAnswers }) => {
   const [shuffledFilm, setShuffledFilm] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [mediaType, setMediaType] = useState('movie');
+  const [answers, setAnswers] = useState(userAnswers);
 
   useEffect(() => {
     const finalFilmDisplay = [...filmRecommendation]
@@ -86,7 +87,7 @@ const Summary = ({ userAnswers }) => {
 
   const onStartAfreshButton = () => {
     // empty the array
-    return userAnswers.length === 0;
+    setAnswers((prev) => prev.length === 0);
   };
 
   return (
