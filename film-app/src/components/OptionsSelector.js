@@ -20,10 +20,14 @@ const OptionsSelector = () => {
     }, 1000);
   };
 
+  const onStartAfresh = () => {
+    setUserAnswers(() => []);
+  };
+
   if (activeQuestionIndex === QUESTIONS.length) {
     return (
       <div>
-        <Summary userAnswers={userAnswers} />
+        <Summary userAnswers={userAnswers} onStartAfresh={onStartAfresh} />
       </div>
     );
   }

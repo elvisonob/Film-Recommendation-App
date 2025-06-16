@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import QUESTIONS from '../questions.js';
 
-const Summary = ({ userAnswers }) => {
+const Summary = ({ userAnswers, onStartAfresh }) => {
   const [filmRecommendation, setFilmRecommendation] = useState([]);
   const [shuffledFilm, setShuffledFilm] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [mediaType, setMediaType] = useState('movie');
-  const [answers, setAnswers] = useState(userAnswers);
 
   useEffect(() => {
     const finalFilmDisplay = [...filmRecommendation]
@@ -85,11 +84,6 @@ const Summary = ({ userAnswers }) => {
     return <h1>Loading...</h1>;
   }
 
-  const onStartAfreshButton = () => {
-    // empty the array
-    setAnswers((prev) => prev.length === 0);
-  };
-
   return (
     <div className="film-background">
       <h1>Top Recommendation</h1>
@@ -115,7 +109,7 @@ const Summary = ({ userAnswers }) => {
               </div>
             );
           })}
-          <button className="refresh" onClick={onStartAfreshButton}>
+          <button className="refresh" onClick={onStartAfresh}>
             Start Afresh
           </button>
         </div>
