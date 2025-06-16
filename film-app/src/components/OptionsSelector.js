@@ -6,7 +6,6 @@ import Header from './Header';
 const OptionsSelector = () => {
   const [userAnswers, setUserAnswers] = useState([]);
   const [answerState, setAnswerState] = useState('');
-  console.log(userAnswers);
 
   const activeQuestionIndex =
     answerState === '' ? userAnswers.length : userAnswers.length - 1;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import QUESTIONS from '../questions.js';
+import API_key from '../ApiKey.js';
 
 const Summary = ({ userAnswers, onStartAfresh }) => {
   const [filmRecommendation, setFilmRecommendation] = useState([]);
@@ -23,7 +24,7 @@ const Summary = ({ userAnswers, onStartAfresh }) => {
       const category = userAnswers[2];
       const country = userAnswers[3];
 
-      const API_key = '0514ea5bc02a1f50a634dad7f81a8877';
+      const ApiKey = API_key;
 
       let isDocumentary = false;
 
@@ -48,7 +49,7 @@ const Summary = ({ userAnswers, onStartAfresh }) => {
       const genreId = isDocumentary ? '99' : genreMap[genre] || 10749;
 
       const query = new URLSearchParams({
-        api_key: API_key,
+        api_key: ApiKey,
         with_genres: genreId,
         certification_country: country,
         certification: rating,
@@ -62,7 +63,6 @@ const Summary = ({ userAnswers, onStartAfresh }) => {
 
         for (let i = 1; i <= 5; i++) {
           const url = `https://api.themoviedb.org/3/discover/${movieType}?${query}&page=${i}`;
-          console.log(url);
           const response = await fetch(url);
           const data = await response.json();
 
