@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import QUESTIONS from '../questions.js';
 import API_key from '../ApiKey.js';
 
+// Adding media queries coming
 const Summary = ({ userAnswers, onStartAfresh }) => {
   const [filmRecommendation, setFilmRecommendation] = useState([]);
   const [shuffledFilm, setShuffledFilm] = useState([]);
@@ -109,11 +110,11 @@ const Summary = ({ userAnswers, onStartAfresh }) => {
               </div>
             );
           })}
-          <button className="refresh" onClick={onStartAfresh}>
-            Start Afresh
-          </button>
         </div>
       )}
+      <button className="refresh" onClick={onStartAfresh}>
+        Start Afresh
+      </button>
     </div>
   );
 };
