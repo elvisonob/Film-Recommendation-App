@@ -99,14 +99,13 @@ h1 {
   margin: 0 20px;
 }
 
-.film-poster {
+/* .film-poster {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
   border-radius: 8px;
-  /* optional */
-}
+}  */
 
 .films {
   display: grid;
