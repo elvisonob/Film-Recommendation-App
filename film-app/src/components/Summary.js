@@ -101,6 +101,7 @@ const Summary = ({ userAnswers, onStartAfresh }) => {
                 {film.poster_path && (
                   <img
                     src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
+                    className="film-poster"
                     alt={film.title}
                     height="100%"
                     width="100%"
