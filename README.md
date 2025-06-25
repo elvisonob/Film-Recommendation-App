@@ -4,10 +4,10 @@ Film Recommendation Application
 
 <h2>Project Description</h2>
 
-This is a Film Recommendation Application that aids the user in quickly coming up with a film they did like to see.
+This is a Film Recommendation Application designed to help users quickly find a movie they'll enjoy.
 
-I do acknowledge that it can be daunting scrolling through film channels such as Netflix to look for the perfect film that suits your taste, and to save a user that time and energy, I have specifically created this application in which a user can choose between four options their unique preferences of the kind of film they want to see, and then a top-notch recommendation that suit your preference/choice will be selected and shortlisted.
+Browsing through countless options on platforms like Netflix can be time-consuming and overwhelming. To simplify this, the application allows users to select their preferences from four key options. Based on these inputs, it generates a high-quality recommendation tailored to their tastes.
 
 <h1>Project Usage</h1>
 
-User experience is optimized as they can easily choose an option that uniquely suit their preference and get top quality film recommendation.
+User experience is optimized as they can easily choose an option that uniquely suit their preference/choice and get high quality film recommendation.
