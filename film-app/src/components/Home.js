@@ -1,18 +1,21 @@
+import { Link } from 'react-router-dom';
+
 const Home = () => {
   return (
-    <div>
-      <p>
-        Tired of scrolling too much to find a film of your choice? or a film
-        that resonates with your values?
-        <br></br>
-        <p>
-          Take this less than a minute survey and we will give you the best
-          recommendation that suits what you want to watch
+    <div className="homepage">
+      <div className="subhomepage">
+        <p className="homepage-font">
+          Tired of scrolling too much to find a film of your choice or a film
+          that resonates with your unique preference?
         </p>
-      </p>
-      <button>
-        <h2>START</h2>
-      </button>
+        <p className="homepage-font">
+          Take this less than a minute quiz with only 4 questions to get a film
+          recommendation that suits you.
+        </p>
+        <Link to="/optionsselector">
+          <button className="homepage-button">START</button>
+        </Link>
+      </div>
     </div>
   );
 };
