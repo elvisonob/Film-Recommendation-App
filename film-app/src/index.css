@@ -106,7 +106,6 @@ h1 {
 }
 
 .subhomepage {
-  background-color: white;
   height: 600px;
   width: 360px;
   border-radius: 10px;
@@ -138,6 +137,20 @@ h1 {
   font-size: large;
   font-style: italic;
   color: brown;
+}
+
+@media (min-width: 40rem) {
+  .homepage-button {
+    /* background-color: blue;
+  padding: 20px;
+  color: white;
+  display: grid;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: large;
+  cursor: pointer; */
+    justify-self: center;
+  }
 }
 
 .film-poster {
