@@ -85,6 +85,19 @@ const Summary = ({ userAnswers, onStartAfresh }) => {
     return <h1>Loading...</h1>;
   }
 
+  if (shuffledFilm.length === 0) {
+    return (
+      <div>
+        <h2 className="shuffledFilm">
+          No Films matching your preference found
+        </h2>
+        <button className="refresh" onClick={onStartAfresh}>
+          Start Afresh
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="film-background">
       <h1>Top Recommendation</h1>
