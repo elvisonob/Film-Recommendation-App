@@ -118,6 +118,7 @@ h1 {
   padding-top: 40px;
   display: grid;
   justify-items: center;
+  width: 100%;
 }
 
 .homepage-button {
@@ -137,28 +138,6 @@ h1 {
   font-size: large;
   font-style: italic;
   color: brown;
-}
-
-@media (min-width: 40rem) {
-  .subhomepage {
-    height: 600px;
-    width: 360px;
-    border-radius: 10px;
-    display: grid;
-    align-content: center;
-    padding: 50px;
-  }
-  .homepage-button {
-    background-color: blue;
-    padding: 20px;
-    color: white;
-    display: grid;
-    border-radius: 10px;
-    margin-top: 10px;
-    font-size: large;
-    cursor: pointer;
-    justify-self: center;
-  }
 }
 
 .film-poster {
