@@ -13,7 +13,7 @@ const Home = () => {
           recommendation that suits you.
         </p>
         <Link to="/optionsselector">
-          <button className="homepage-button">START</button>
+          <button className="homepagebutton">START</button>
         </Link>
       </div>
     </div>
