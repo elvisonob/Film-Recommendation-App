@@ -119,6 +119,12 @@ h1 {
   align-items: center;
 }
 
+.start-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .homepagebutton {
   background-color: blue;
   padding: 20px;
