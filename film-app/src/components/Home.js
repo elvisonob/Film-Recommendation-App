@@ -12,11 +12,11 @@ const Home = () => {
           Take this less than a minute quiz with only 4 questions to get a film
           recommendation that suits you.
         </p>
-        <Link to="/optionsselector">
-          <div className="start-button">
+        <div className="start-button">
+          <Link to="/optionsselector">
             <button className="homepagebutton">START</button>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );

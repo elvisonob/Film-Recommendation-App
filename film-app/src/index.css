@@ -8,6 +8,16 @@ body {
   background-color: bisque;
 }
 
+.homepagebutton {
+  background-color: blue;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: large;
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -125,25 +135,12 @@ h1 {
   margin-top: 20px;
 }
 
-.homepagebutton {
-  background-color: blue;
-  padding: 20px;
-  color: white;
-  display: flex;
-  border-radius: 10px;
-  margin-top: 10px;
-  font-size: large;
-  cursor: pointer;
-  justify-self: center;
-}
-
 .homepage-font {
   font-family: inherit;
   font-size: large;
   font-style: italic;
   color: brown;
   margin-bottom: 16px;
-  /* or whatever spacing you need */
 }
 
 .film-poster {
