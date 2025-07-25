@@ -181,6 +181,12 @@ p {
   padding-top: 10px;
 }
 
+.refresh-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .refresh {
   background-color: green;
   color: white;

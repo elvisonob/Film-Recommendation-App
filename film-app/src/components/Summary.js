@@ -126,9 +126,11 @@ const Summary = ({ userAnswers, onStartAfresh }) => {
           })}
         </div>
       )}
-      <button className="refresh" onClick={onStartAfresh}>
-        Start Afresh
-      </button>
+      <div className="refresh-container">
+        <button className="refresh" onClick={onStartAfresh}>
+          Start Afresh
+        </button>
+      </div>
     </div>
   );
 };
