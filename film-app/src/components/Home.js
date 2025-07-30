@@ -9,8 +9,8 @@ const Home = () => {
           that resonates with your unique preference?
         </p>
         <p className="homepage-font">
-          Take this 30seconds quiz with 4 questions to get a film recommendation
-          that suits you.
+          Take this 30 seconds quiz with 4 questions to get a film
+          recommendation that suits you.
         </p>
         <div className="start-button">
           <Link to="/optionsselector">
