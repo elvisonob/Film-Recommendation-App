@@ -5,8 +5,8 @@ const Home = () => {
     <div className="homepage">
       <div className="subhomepage">
         <p className="homepage-font">
-          Tired of scrolling too much to find a film of your choice or a film
-          that resonates with your unique preference?
+          Tired of scrolling too much to find a film of your choice or one that
+          resonates with your unique preference?
         </p>
         <p className="homepage-font">
           Take this 30 seconds quiz with 4 questions to get a film
