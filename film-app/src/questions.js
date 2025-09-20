@@ -17,7 +17,7 @@ const QUESTIONS = [
   {
     id: 'q4',
     text: 'Country',
-    answers: ['USA', 'Great Britain', 'Europe'],
+    answers: ['USA', 'Great Britain', 'EU'],
   },
 ];
 
