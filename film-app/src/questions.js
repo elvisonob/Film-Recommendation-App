@@ -2,7 +2,7 @@ const QUESTIONS = [
   {
     id: 'q1',
     text: 'Genre',
-    answers: ['Romance', 'Action', 'Horror', 'Comedy', 'Adventure'],
+    answers: ['Action', 'Comedy', 'Adventure', 'Horror', 'Romance'],
   },
   {
     id: 'q2',
