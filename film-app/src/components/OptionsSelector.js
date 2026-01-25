@@ -2,10 +2,13 @@ import QUESTIONS from '../questions.js';
 import Summary from './Summary';
 import { useState } from 'react';
 import Header from './Header';
+import useFilmRecommendations from './useFilmRecommendations';
 
 const OptionsSelector = () => {
   const [userAnswers, setUserAnswers] = useState([]);
   const [answerState, setAnswerState] = useState('');
+
+  const { films, isLoading, mediaType } = useFilmRecommendations(userAnswers);
 
   const activeQuestionIndex =
     answerState === '' ? userAnswers.length : userAnswers.length - 1;
@@ -25,9 +28,12 @@ const OptionsSelector = () => {
 
   if (activeQuestionIndex === QUESTIONS.length) {
     return (
-      <div>
-        <Summary userAnswers={userAnswers} onStartAfresh={onStartAfresh} />
-      </div>
+      <Summary
+        films={films}
+        isLoading={isLoading}
+        mediaType={mediaType}
+        onStartAfresh={onStartAfresh}
+      />
     );
   }
 
