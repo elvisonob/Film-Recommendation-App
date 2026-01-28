@@ -1,4 +1,4 @@
-const FilmGrid = ({ films, mediaType, onStartAfresh }) => (
+const FilmGrid = ({ films, mediaType }) => (
   <div className="film-container">
     {films.map((film) => {
       const date = mediaType === 'tv' ? film.first_air_date : film.release_date;
